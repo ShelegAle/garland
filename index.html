@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style type="text/css">
+      #garland {
+        background-image: url('lights2.png');
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 33px;
+        width: 100%;
+        z-index: 99;
+      }
+      .garland_1 {
+        background-position: 0 0;
+      }
+      .garland_2 {
+        background-position: 0 -35px;
+      }
+      .garland_3 {
+        background-position: 0 -70px;
+      }
+      .garland_4 {
+        background-position: 0 -105px;
+      }
+      #nums_1 {
+        padding: 100px;
+      }
+    </style>
+
+    <div id="garland" class="garland_4">
+      <div id="nums_1">1</div>
+    </div>
+
+    <script type="text/javascript">
+      function garland() {
+        let garl = document.querySelector('#garland'),
+          num = document.querySelector('#nums_1'),
+          nums = document.querySelector('#nums_1').innerHTML
+
+        if (nums == 1) {
+          garl.className = 'garland_1'
+          num.innerHTML = '2'
+        }
+        if (nums == 2) {
+          garl.className = 'garland_2'
+          num.innerHTML = '3'
+        }
+        if (nums == 3) {
+          garl.className = 'garland_3'
+          num.innerHTML = '4'
+        }
+        if (nums == 4) {
+          garl.className = 'garland_4'
+          num.innerHTML = '1'
+        }
+      }
+
+      setInterval(function () {
+        garland()
+      }, 600)
+    </script>
+  </body>
+</html>
